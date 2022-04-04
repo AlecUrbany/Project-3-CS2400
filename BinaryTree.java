@@ -1,6 +1,3 @@
-import java.util.Stack;
-
-import org.w3c.dom.Node;
 public class BinaryTree<T> implements BinaryTreeInterface<T>
 {
    private BinaryNode<T> root;
@@ -93,20 +90,10 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    
    /** calls postorderTraverse(BinaryNode<T> node)
     * prints (using post-order traversal) all nodes in the "whole" tree */
-   public void postorderTraverse(T node)
+   public void postorderTraverse()
    { 
-      Stack s = new Stack<>();
-      Stack t = new Stack<>();
-      while(!s.isEmpty())
-      {
-         s.pop();
-         t.push(node);
-         if(leftTree==null)
-         {
-            s.push(T);
-         }
-
-      }
+      //Will automatically call the root as a piece of data to send to the method.
+      postorderTraverse(root);
    }
 
    
@@ -114,16 +101,26 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
     * prints (using post-order traversal) all nodes in the subtree rooted at this node.*/
    private void postorderTraverse(BinaryNode<T> node)
    {
-      
-
+      //If loop checks for a naked "null" node. If it's not naked, then we do the thing in the loop
+      if(node !=null)
+         {
+            //Here is the aformentioned "thing" in the loop. It will collect data of the left and right children, then get the data of the node itself.
+            postorderTraverse(node.getLeftChild());
+            postorderTraverse(node.getRightChild());
+            System.out.println(node.getData());
+         }
    }
- 
    /** The following calls postorderTraverse_binaryNodeMethod(), which is a recursive binaryNode class method   
     * prints (using post-order traversal) all nodes in the "whole" tree */
    public void postorderTraverse_callBinaryNodeMethod()
    {
+      postorderTraverse_callBinaryNodeMethod();
    }
-   
+   public void postorderTraverse_binaryNodeMethod()
+   {
+
+   }
+   /**-----------------------------------------
    /** -------------------------------------------------------------------- */
    /** Task 2: Implement the 2 methods
     *     . In BinaryTree.java

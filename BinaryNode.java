@@ -127,7 +127,6 @@ class BinaryNode<T>
    {  
 	   return 0;
    } // end getHeight
-   
    /** -------------------------------------------------------------------- */
    /** A Recursive Method in the BinaryNode Class  
     * Counts the nodes in the subtree rooted at "this" node.

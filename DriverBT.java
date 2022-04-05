@@ -7,7 +7,7 @@ public class DriverBT
 		createTree1(aTree);
 		
 		System.out.println("(binaryTree) post-order: ");
-	//	aTree.postorderTraverse();
+		aTree.postorderTraverse();
 		
 		System.out.println("(binaryNode) post-order: ");
 		aTree.postorderTraverse_callBinaryNodeMethod();
@@ -30,7 +30,7 @@ public class DriverBT
 		createTree2(aTree2);
 		
 		System.out.println("(binaryTree) post-order: ");
-	//	aTree2.postorderTraverse();
+		aTree2.postorderTraverse();
 		
 		System.out.println("(binaryNode) post-order: ");
 		aTree2.postorderTraverse_callBinaryNodeMethod();
@@ -43,7 +43,7 @@ public class DriverBT
 		System.out.println();
 		
 		System.out.println("(BinaryTree) # nodes of tree is " + aTree2.getNumberOfNodes());
-		System.out.println("(BinaryNode) # nodes of tree is " + aTree2.getNumberOfNodes_callBinaryNodeMethod());
+		System.out.println("(BinaryNode) # nodes of tree is " + aTree2.getHeight_callBinaryNodeMethod());
 		
 		System.out.println("Done.");
 	}  // end main
@@ -79,7 +79,7 @@ public class DriverBT
 	{ 
 	
 		// Leaves
-		BinaryTree<String> fTree = new BinaryTree<>("B");
+		BinaryTree<String> fTree = new BinaryTree<>("F");
 		BinaryTree<String> gTree = new BinaryTree<>("G");
 		BinaryTree<String> hTree = new BinaryTree<>("H");
 		BinaryTree<String> iTree = new BinaryTree<>("I");

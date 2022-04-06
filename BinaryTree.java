@@ -114,10 +114,11 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
     * prints (using post-order traversal) all nodes in the "whole" tree */
    public String postorderTraverse_callBinaryNodeMethod()
    {
+      //This is the a stupid thing that will send root data to the private method below.
       postorderTraverse_binaryNodeMethod(root);
       return null;
    }
-   private void postorderTraverse_binaryNodeMethod(BinaryNode<T> root2)
+   private void postorderTraverse_binaryNodeMethod(BinaryNode<T> root)
    {
       if (root != null)
       root.postorderTraverse_binaryNodeMethod();
@@ -182,7 +183,8 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
       if (node == null)
       { 
          return 0;
-      }
+      } 
+      //the numberofnodes method adds the total amount of the left and right subtree and combines it totally with the root.
       return 1 + getNumberOfNodes(node.getLeftChild()) + getNumberOfNodes(node.getRightChild());
    } // end getNumberOfNodes
    
@@ -191,6 +193,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    @return  The number of nodes in the "whole" tree. */
    public int getNumberOfNodes_callBinaryNodeMethod()
    {
+     // this is the method that calls the other private one in order to reicieve the number of nodes.
 	   int numberOfNodes = 0;
 	   if (root != null)
 		   numberOfNodes = root.getNumberOfNodes_binaryNodeMethod();
